@@ -1,0 +1,276 @@
+.navigation {
+  &__checkbox {
+    display: none;
+  }
+
+  &__button {
+    background-color: $color-white-1;
+    height: $button-size--small;
+    width: $button-size--small;
+    position: fixed;
+    top: $button-offset-top--small;
+    right: $button-offset-right--small;
+    border-radius: 50%;
+    z-index: 12;
+    box-shadow: -0.1rem -0.1rem 1rem rgba($color-tertiary-light, 0.5);
+    text-align: center;
+    cursor: pointer;
+    @include mediaQueryOrientation($tablet, portrait) {
+      height: $button-size--medium;
+      width: $button-size--medium;
+      top: $button-offset-top--medium;
+      right: $button-offset-right--medium;
+    }
+    @include mediaQuery($laptop-small) {
+      height: $button-size--large;
+      width: $button-size--large;
+      top: $button-offset-top--large;
+      right: $button-offset-right--large;
+    }
+  }
+
+  &__background {
+    width: calc(#{$button-size--small} + 1rem);
+    position: fixed;
+    top: 1rem;
+    bottom: 1rem;
+    right: calc(#{$button-offset-right--small} - 0.5rem);
+    background-image: linear-gradient(
+      $color-tertiary-light,
+      $color-secondary-light
+    );
+    transform: translateY(300%);
+    z-index: 11;
+    transition: transform 0.4s cubic-bezier(0.85, 0, 0.07, 1);
+    @include mediaQueryOrientation($tablet, portrait) {
+      width: calc(#{$button-size--medium} + 1rem);
+      right: calc(#{$button-offset-right--medium} - 0.5rem);
+    }
+    @include mediaQuery($laptop-small) {
+      width: calc(#{$button-size--large} + 1rem);
+      right: calc(#{$button-offset-right--large} - 0.5rem);
+    }
+  }
+
+  &__nav {
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    right: 0;
+    z-index: 10;
+    background-color: $color-primary;
+
+    opacity: 0;
+    width: 0;
+    transition: all 0.4s cubic-bezier(0.85, 0, 0.07, 1);
+    transition-delay: 0.2s;
+  }
+
+  &__list {
+    position: absolute;
+    top: 1rem;
+    bottom: 1rem;
+    left: 1rem;
+    font-size: 1.3rem;
+    right: calc(#{$button-size--small} + #{$button-offset-right--small});
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    list-style: none;
+    text-align: right;
+    @include mediaQueryOrientation($tablet, portrait) {
+      font-size: 2.5rem;
+      right: calc(#{$button-size--medium} + #{$button-offset-right--medium});
+    }
+    @include mediaQuery($laptop-small) {
+      right: calc(#{$button-size--large} + #{$button-offset-right--large});
+      left: 50%;
+      font-size: 2.5rem;
+    }
+  }
+
+  &__item {
+    margin: 1vh;
+    padding-right: 0.5rem;
+    @include mediaQuery($tablet) {
+      padding-right: 2rem;
+    }
+  }
+
+  &__link {
+    &:link,
+    &:visited {
+      display: inline-block;
+      width: 90%;
+      font-weight: 300;
+      padding: 0.5rem;
+      color: rgba($color-white-1, 0.8);
+      text-decoration: none;
+      text-transform: uppercase;
+      transition: all 0.4s;
+
+      span {
+        margin-right: 1rem;
+        display: inline-block;
+      }
+    }
+
+    &:hover,
+    &:active {
+      background-position: 100%;
+      color: $color-tertiary-light;
+      text-shadow: -2px -2px 8px rgba($color-tertiary-light, 0.9);
+      transform: translateX(-1rem);
+    }
+  }
+
+  //FUNCTIONALITY
+  &__checkbox:checked ~ &__background {
+    transform: translateY(0);
+  }
+
+  &__checkbox:checked ~ &__nav {
+    width: 100%;
+    opacity: 1;
+  }
+
+  //ICON
+  &__icon {
+    position: relative;
+    margin-top: calc(#{$button-size--small} / 2);
+    @include mediaQueryOrientation($tablet, portrait) {
+      margin-top: calc(#{$button-size--medium} / 2);
+    }
+    @include mediaQuery($laptop-small) {
+      margin-top: calc(#{$button-size--large} / 2);
+    }
+
+    &,
+    &::before,
+    &::after {
+      height: 2px;
+      background-color: $color-primary;
+      display: inline-block;
+    }
+
+    &::before,
+    &::after {
+      content: "";
+      position: absolute;
+      right: 0;
+      transition: all 0.2s;
+    }
+
+    & {
+      width: calc(#{$button-size--small} / 2);
+      @include mediaQueryOrientation($tablet, portrait) {
+        width: calc(#{$button-size--medium} / 2);
+      }
+      @include mediaQuery($laptop-small) {
+        width: calc(#{$button-size--large} / 2);
+      }
+    }
+
+    &::before {
+      width: calc(#{$button-size--small} / 3.5);
+      top: calc(#{$button-size--small} / -8);
+      @include mediaQueryOrientation($tablet, portrait) {
+        width: calc(#{$button-size--medium} / 3.5);
+        top: calc(#{$button-size--medium} / -8);
+      }
+      @include mediaQuery($laptop-small) {
+        width: calc(#{$button-size--large} / 3.5);
+        top: calc(#{$button-size--large} / -8);
+      }
+    }
+    &::after {
+      width: calc(#{$button-size--small} / 2.5);
+      top: calc(#{$button-size--small} / 8);
+      @include mediaQueryOrientation($tablet, portrait) {
+        width: calc(#{$button-size--medium} / 2.5);
+        top: calc(#{$button-size--medium} / 8);
+      }
+      @include mediaQuery($laptop-small) {
+        width: calc(#{$button-size--large} / 2.5);
+        top: calc(#{$button-size--large} / 8);
+      }
+    }
+  }
+
+  &__button:hover &__icon::before {
+    top: calc(#{$button-size--small} / -5.5);
+    width: calc(#{$button-size--small} / 2);
+    @include mediaQueryOrientation($tablet, portrait) {
+      top: calc(#{$button-size--medium} / -5.5);
+      width: calc(#{$button-size--medium} / 2);
+    }
+    @include mediaQuery($laptop-small) {
+      top: calc(#{$button-size--large} / -5.5);
+      width: calc(#{$button-size--large} / 2);
+    }
+  }
+
+  &__button:hover &__icon::after {
+    top: calc(#{$button-size--small} / 5.5);
+    width: calc(#{$button-size--small} / 2);
+    @include mediaQueryOrientation($tablet, portrait) {
+      top: calc(#{$button-size--medium} / 5.5);
+      width: calc(#{$button-size--medium} / 2);
+    }
+    @include mediaQuery($laptop-small) {
+      top: calc(#{$button-size--large} / 5.5);
+      width: calc(#{$button-size--large} / 2);
+    }
+  }
+
+  &__button:hover &__icon {
+    width: calc(#{$button-size--small} / 2);
+    @include mediaQueryOrientation($tablet, portrait) {
+      width: calc(#{$button-size--medium} / 2);
+    }
+    @include mediaQuery($laptop-small) {
+      width: calc(#{$button-size--large} / 2);
+    }
+  }
+
+  &__checkbox:checked + &__button &__icon {
+    background-color: transparent;
+    width: calc(#{$button-size--small} / 2);
+    @include mediaQueryOrientation($tablet, portrait) {
+      width: calc(#{$button-size--medium} / 2);
+    }
+    @include mediaQuery($laptop-small) {
+      width: calc(#{$button-size--large} / 2);
+    }
+  }
+
+  &__checkbox:checked + &__button &__icon::before {
+    top: 0;
+    transform: rotate(135deg);
+    width: calc(#{$button-size--small} / 2);
+    @include mediaQueryOrientation($tablet, portrait) {
+      width: calc(#{$button-size--medium} / 2);
+    }
+    @include mediaQuery($laptop-small) {
+      width: calc(#{$button-size--large} / 2);
+    }
+  }
+
+  &__checkbox:checked + &__button &__icon::after {
+    top: 0;
+    transform: rotate(-135deg);
+    width: calc(#{$button-size--small} / 2);
+    @include mediaQueryOrientation($tablet, portrait) {
+      width: calc(#{$button-size--medium} / 2);
+    }
+    @include mediaQuery($laptop-small) {
+      width: calc(#{$button-size--large} / 2);
+    }
+  }
+
+  &__socials {
+    position: absolute;
+    left: 2rem;
+    bottom: 2rem;
+  }
+}
