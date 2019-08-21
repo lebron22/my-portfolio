@@ -1,0 +1,19 @@
+//FLEXBOX MIXIN
+@mixin flexbox($justify-content, $align-items) {
+  display: flex;
+  justify-content: $justify-content;
+  align-items: $align-items;
+}
+
+//MIEDIA QUERIES MIXIN
+@mixin mediaQueryOrientation($min-width, $orientation) {
+  @media (min-width: $min-width) and (orientation: $orientation) {
+    @content;
+  }
+}
+
+@mixin mediaQuery($min-width) {
+  @media (min-width: $min-width) {
+    @content;
+  }
+}

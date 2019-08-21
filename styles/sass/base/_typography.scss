@@ -1,0 +1,120 @@
+body {
+  font-family: "Lato", sans-serif;
+  font-weight: 400;
+  /*font-size: 16px;*/
+  color: $color-white-1;
+}
+
+.heading-primary {
+  text-transform: uppercase;
+  backface-visibility: hidden;
+  font-size: 8vw;
+  font-weight: 900;
+  text-shadow: -2px -2px 5px rgba($color-tertiary-light, 0.9);
+  animation: moveInLeft 1s ease-out;
+
+  @include mediaQuery($mobile-large) {
+    font-size: 9vw;
+  }
+  @include mediaQuery($laptop-small) {
+    font-size: 8vw;
+  }
+  @include mediaQueryOrientation($mobile-small, portrait) {
+    font-size: 14vw;
+  }
+  @include mediaQueryOrientation($tablet, portrait) {
+    font-size: 12vw;
+  }
+}
+
+.heading-secondary {
+  &--main {
+    font-size: 3.3vw;
+    @include mediaQueryOrientation($mobile-small, portrait) {
+      font-size: 5.8vw;
+    }
+    @include mediaQueryOrientation($tablet, portrait) {
+      font-size: 3.9vw;
+    }
+    @include mediaQuery($laptop-medium) {
+      font-size: 2.3vw;
+    }
+  }
+  &--sub {
+    text-transform: none;
+    font-size: 4.5vw;
+    font-style: italic;
+    // text-shadow: -2px -2px 5px rgba($color-tertiary-light, 0.9);
+    animation: moveInLeft 1s ease-out;
+
+    @include mediaQuery($mobile-large) {
+      font-size: 3vw;
+    }
+    @include mediaQuery($tablet) {
+      font-size: 2.5vw;
+    }
+    @include mediaQueryOrientation($mobile-large, portrait) {
+      font-size: 3.5vw;
+    }
+  }
+  &--colored {
+    background-image: linear-gradient(
+      to right bottom,
+      $color-secondary-light,
+      $color-tertiary-light,
+      $color-white-1
+    );
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+    font-weight: 800;
+  }
+}
+
+.paragraph {
+  font-size: 2.6vw;
+  @include mediaQueryOrientation($mobile-small, portrait) {
+    font-size: 4.6vw;
+  }
+  @include mediaQuery($tablet) {
+    font-size: 2.2vw;
+  }
+  @include mediaQueryOrientation($tablet, portrait) {
+    font-size: 2.8vw;
+  }
+  @include mediaQuery($laptop-medium) {
+    font-size: 1.8vw;
+  }
+  &--main {
+    font-size: 2.5vw;
+    @include mediaQueryOrientation($mobile-small, portrait) {
+      font-size: 4.5vw;
+    }
+    @include mediaQuery($tablet) {
+      font-size: 2.2vw;
+    }
+    @include mediaQueryOrientation($tablet, portrait) {
+      font-size: 4vw;
+    }
+    @include mediaQuery($laptop-medium) {
+      font-size: 1.8vw;
+    }
+  }
+  &--sub {
+    font-size: 1.5vw;
+    @include mediaQueryOrientation($mobile-small, portrait) {
+      font-size: 3.5vw;
+    }
+    @include mediaQuery($tablet) {
+      font-size: 1.2vw;
+    }
+    @include mediaQueryOrientation($tablet, portrait) {
+      font-size: 3vw;
+    }
+  }
+  &--italic {
+    display: block;
+    font-style: italic;
+    text-align: right;
+  }
+}

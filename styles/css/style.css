@@ -12,3 +12,245 @@ h1 {
 a {
   color: #fefefe;
   text-decoration: none; }
+
+@keyframes hideAndAppear {
+  0% {
+    opacity: 0; }
+  10% {
+    opacity: 1; }
+  80% {
+    opacity: 1; }
+  100% {
+    opacity: 0; } }
+
+@keyframes moveInLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(-10rem); }
+  80% {
+    transform: translateX(1rem); }
+  100% {
+    opacity: 1;
+    transform: translate(0); } }
+
+@keyframes moveInRight {
+  0% {
+    opacity: 0;
+    transform: translateX(10rem); }
+  80% {
+    transform: translateX(-1rem); }
+  100% {
+    opacity: 1;
+    transform: translate(0); } }
+
+@keyframes moveInBottom {
+  0% {
+    opacity: 0;
+    transform: translateY(10rem); }
+  80% {
+    transform: translateY(-1rem); }
+  100% {
+    opacity: 1;
+    transform: translate(0); } }
+
+body {
+  font-family: "Lato", sans-serif;
+  font-weight: 400;
+  /*font-size: 16px;*/
+  color: #fefefe; }
+
+.heading-primary {
+  text-transform: uppercase;
+  backface-visibility: hidden;
+  font-size: 8vw;
+  font-weight: 900;
+  text-shadow: -2px -2px 5px rgba(133, 193, 233, 0.9);
+  animation: moveInLeft 1s ease-out; }
+  @media (min-width: 549px) {
+    .heading-primary {
+      font-size: 9vw; } }
+  @media (min-width: 1024px) {
+    .heading-primary {
+      font-size: 8vw; } }
+  @media (min-width: 320px) and (orientation: portrait) {
+    .heading-primary {
+      font-size: 14vw; } }
+  @media (min-width: 749px) and (orientation: portrait) {
+    .heading-primary {
+      font-size: 12vw; } }
+
+.heading-secondary--main {
+  font-size: 3.3vw; }
+  @media (min-width: 320px) and (orientation: portrait) {
+    .heading-secondary--main {
+      font-size: 5.8vw; } }
+  @media (min-width: 749px) and (orientation: portrait) {
+    .heading-secondary--main {
+      font-size: 3.9vw; } }
+  @media (min-width: 1366px) {
+    .heading-secondary--main {
+      font-size: 2.3vw; } }
+
+.heading-secondary--sub {
+  text-transform: none;
+  font-size: 4.5vw;
+  font-style: italic;
+  animation: moveInLeft 1s ease-out; }
+  @media (min-width: 549px) {
+    .heading-secondary--sub {
+      font-size: 3vw; } }
+  @media (min-width: 749px) {
+    .heading-secondary--sub {
+      font-size: 2.5vw; } }
+  @media (min-width: 549px) and (orientation: portrait) {
+    .heading-secondary--sub {
+      font-size: 3.5vw; } }
+
+.heading-secondary--colored {
+  background-image: linear-gradient(to right bottom, #ff3cce, #85c1e9, #fefefe);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  font-weight: 800; }
+
+.paragraph {
+  font-size: 2.6vw; }
+  @media (min-width: 320px) and (orientation: portrait) {
+    .paragraph {
+      font-size: 4.6vw; } }
+  @media (min-width: 749px) {
+    .paragraph {
+      font-size: 2.2vw; } }
+  @media (min-width: 749px) and (orientation: portrait) {
+    .paragraph {
+      font-size: 2.8vw; } }
+  @media (min-width: 1366px) {
+    .paragraph {
+      font-size: 1.8vw; } }
+  .paragraph--main {
+    font-size: 2.5vw; }
+    @media (min-width: 320px) and (orientation: portrait) {
+      .paragraph--main {
+        font-size: 4.5vw; } }
+    @media (min-width: 749px) {
+      .paragraph--main {
+        font-size: 2.2vw; } }
+    @media (min-width: 749px) and (orientation: portrait) {
+      .paragraph--main {
+        font-size: 4vw; } }
+    @media (min-width: 1366px) {
+      .paragraph--main {
+        font-size: 1.8vw; } }
+  .paragraph--sub {
+    font-size: 1.5vw; }
+    @media (min-width: 320px) and (orientation: portrait) {
+      .paragraph--sub {
+        font-size: 3.5vw; } }
+    @media (min-width: 749px) {
+      .paragraph--sub {
+        font-size: 1.2vw; } }
+    @media (min-width: 749px) and (orientation: portrait) {
+      .paragraph--sub {
+        font-size: 3vw; } }
+  .paragraph--italic {
+    display: block;
+    font-style: italic;
+    text-align: right; }
+
+.logo-box {
+  width: 4vw; }
+  @media (min-width: 320px) and (orientation: portrait) {
+    .logo-box {
+      width: 10vw; } }
+  @media (min-width: 549px) {
+    .logo-box {
+      width: 5vw; } }
+  @media (min-width: 749px) and (orientation: portrait) {
+    .logo-box {
+      width: 7vw; } }
+  .logo-box__logo {
+    display: block;
+    width: 100%;
+    transition: transform 1s; }
+    .logo-box__logo:hover {
+      transform: rotate(360deg); }
+
+.socials {
+  display: flex;
+  align-self: flex-end; }
+  @media (min-width: 320px) and (orientation: portrait) {
+    .socials {
+      flex-direction: column; } }
+  .socials__icon {
+    color: #fefefe;
+    font-size: 3.5vw;
+    padding: 0.5rem;
+    transition: transform 0.2s; }
+    @media (min-width: 320px) and (orientation: portrait) {
+      .socials__icon {
+        font-size: 7vw; } }
+    @media (min-width: 749px) {
+      .socials__icon {
+        font-size: 4vw; } }
+    @media (min-width: 749px) and (orientation: portrait) {
+      .socials__icon {
+        font-size: 5vw; } }
+    @media (min-width: 1366px) {
+      .socials__icon {
+        font-size: 3vw; } }
+    .socials__icon:hover {
+      transform: scale(1.3); }
+
+.header {
+  background-image: linear-gradient(to bottom, rgba(31, 31, 31, 0.4) 0%, rgba(31, 31, 31, 0.4) 100%), url(../../../img/header-background.jpg);
+  background-size: cover;
+  background-position: top;
+  background-attachment: fixed;
+  height: 100vh;
+  padding: 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-direction: column;
+  overflow: hidden; }
+  @media (min-width: 320px) and (orientation: portrait) {
+    .header {
+      background-position: center; } }
+  @media (min-width: 749px) and (orientation: portrait) {
+    .header {
+      padding: 3rem; } }
+  @media (min-width: 1024px) {
+    .header {
+      padding: 3rem; } }
+  @media (min-width: 1366px) {
+    .header {
+      background-position: bottom; } }
+  .header__scroll {
+    position: absolute;
+    bottom: 0.5rem;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 0.7rem;
+    padding-bottom: 0.3rem;
+    animation: hideAndAppear 2s infinite; }
+    @media (min-width: 749px) and (orientation: portrait) {
+      .header__scroll {
+        font-size: 1.2rem;
+        bottom: 1rem; } }
+    @media (min-width: 749px) {
+      .header__scroll {
+        font-size: 0.9rem;
+        bottom: 1rem; } }
+    @media (min-width: 1024px) {
+      .header__scroll {
+        font-size: 1.2rem;
+        bottom: 1rem; } }
+  .header__socials {
+    animation: moveInRight 1s ease-out; }
+    @media (min-width: 320px) and (orientation: portrait) {
+      .header__socials {
+        animation: moveInBottom 1s ease-out; } }
+
+body {
+  background-color: #1f1f1f;
+  overflow-x: hidden; }

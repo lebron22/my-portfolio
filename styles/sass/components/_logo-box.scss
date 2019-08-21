@@ -1,0 +1,21 @@
+.logo-box {
+  width: 4vw;
+  @include mediaQueryOrientation($mobile-small, portrait) {
+    width: 10vw;
+  }
+  @include mediaQuery($mobile-large) {
+    width: 5vw;
+  }
+  @include mediaQueryOrientation($tablet, portrait) {
+    width: 7vw;
+  }
+
+  &__logo {
+    display: block;
+    width: 100%;
+    transition: transform 1s;
+    &:hover {
+      transform: rotate(360deg);
+    }
+  }
+}

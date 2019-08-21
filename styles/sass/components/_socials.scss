@@ -1,0 +1,29 @@
+.socials {
+  display: flex;
+  align-self: flex-end;
+  @include mediaQueryOrientation($mobile-small, portrait) {
+    flex-direction: column;
+  }
+
+  &__icon {
+    color: $color-white-1;
+    font-size: 3.5vw;
+    padding: 0.5rem;
+    transition: transform 0.2s;
+    @include mediaQueryOrientation($mobile-small, portrait) {
+      font-size: 7vw;
+    }
+    @include mediaQuery($tablet) {
+      font-size: 4vw;
+    }
+    @include mediaQueryOrientation($tablet, portrait) {
+      font-size: 5vw;
+    }
+    @include mediaQuery($laptop-medium) {
+      font-size: 3vw;
+    }
+    &:hover {
+      transform: scale(1.3);
+    }
+  }
+}

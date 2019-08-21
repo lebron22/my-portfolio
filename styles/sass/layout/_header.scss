@@ -1,0 +1,57 @@
+.header {
+  background-image: linear-gradient(
+      to bottom,
+      rgba($color-primary, 0.4) 0%,
+      rgba($color-primary, 0.4) 100%
+    ),
+    url(../../../img/header-background.jpg);
+  background-size: cover;
+  background-position: top;
+  background-attachment: fixed;
+  height: 100vh;
+  padding: 2rem;
+  @include flexbox(space-between, flex-start);
+  flex-direction: column;
+  overflow: hidden;
+  @include mediaQueryOrientation($mobile-small, portrait) {
+    background-position: center;
+  }
+  @include mediaQueryOrientation($tablet, portrait) {
+    padding: 3rem;
+  }
+  @include mediaQuery($laptop-small) {
+    padding: 3rem;
+  }
+  @include mediaQuery($laptop-medium) {
+    background-position: bottom;
+  }
+
+  &__scroll {
+    position: absolute;
+    bottom: 0.5rem;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 0.7rem;
+    padding-bottom: 0.3rem;
+    animation: hideAndAppear 2s infinite;
+    @include mediaQueryOrientation($tablet, portrait) {
+      font-size: 1.2rem;
+      bottom: 1rem;
+    }
+    @include mediaQuery($tablet) {
+      font-size: 0.9rem;
+      bottom: 1rem;
+    }
+    @include mediaQuery($laptop-small) {
+      font-size: 1.2rem;
+      bottom: 1rem;
+    }
+  }
+
+  &__socials {
+    @include mediaQueryOrientation($mobile-small, portrait) {
+      animation: moveInBottom 1s ease-out;
+    }
+    animation: moveInRight 1s ease-out;
+  }
+}
