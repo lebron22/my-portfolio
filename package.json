@@ -1,0 +1,15 @@
+{
+  "name": "portfolio",
+  "version": "1.0.0",
+  "description": "Kamil Bronisz portfolio site",
+  "main": "index.js",
+  "scripts": {
+    "compile:sass": "node-sass styles/sass/main.scss styles/css/style.css -w"
+  },
+  "author": "Kamil Bronisz",
+  "license": "ISC",
+  "dependencies": {},
+  "devDependencies": {
+    "node-sass": "^4.12.0"
+  }
+}
