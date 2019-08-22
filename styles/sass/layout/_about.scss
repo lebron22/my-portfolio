@@ -1,0 +1,42 @@
+.about {
+  position: relative;
+  min-height: 100vh;
+  background-color: $color-primary;
+  padding: 2rem;
+  @include mediaQueryOrientation($tablet, portrait) {
+    padding: 3rem;
+  }
+  @include mediaQuery($laptop-small) {
+    padding: 3rem;
+  }
+}
+
+.text-box {
+  height: 80vh;
+  width: 100%;
+  @include flexbox(center, center);
+  &::after {
+    content: "";
+    position: absolute;
+    display: block;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -35%);
+    width: 75%;
+    height: 55%;
+    border: 2px solid $color-tertiary-light;
+    @include mediaQueryOrientation($mobile-small, portrait) {
+      transform: translate(-50%, -45%);
+      height: 70%;
+    }
+  }
+
+  &__paragraph {
+    z-index: 1;
+    width: 65%;
+    transform: translateX(-10%);
+    background-color: $color-primary;
+    outline: 2px solid $color-secondary-light;
+    outline-offset: 2rem;
+  }
+}
