@@ -132,6 +132,9 @@ body {
     @media (min-width: 320px) and (orientation: portrait) {
       .paragraph--main {
         font-size: 4.5vw; } }
+    @media (min-width: 420px) and (orientation: portrait) {
+      .paragraph--main {
+        font-size: 3.8vw; } }
     @media (min-width: 749px) {
       .paragraph--main {
         font-size: 2.2vw; } }
@@ -200,6 +203,92 @@ body {
         font-size: 3vw; } }
     .socials__icon:hover {
       transform: scale(1.3); }
+
+.article {
+  padding: 4.2rem 0;
+  width: 80%; }
+  .article__heading {
+    margin: 1rem 0; }
+  .article__buttons {
+    margin-top: 1rem; }
+  .article:nth-child(even) {
+    position: relative;
+    align-self: flex-end;
+    padding-left: 10%; }
+    .article:nth-child(even) > .article__buttons {
+      text-align: right; }
+    .article:nth-child(even)::before {
+      position: absolute;
+      top: -5%;
+      right: 60%;
+      z-index: -1;
+      color: rgba(133, 193, 233, 0.4); }
+  .article:nth-child(odd) {
+    position: relative;
+    align-self: flex-start;
+    padding-right: 10%; }
+    .article:nth-child(odd)::before {
+      position: absolute;
+      top: -5%;
+      left: 60%;
+      z-index: -1;
+      color: rgba(255, 60, 206, 0.4); }
+  @media (min-width: 549px) {
+    .article {
+      padding: 3rem 2rem;
+      width: 60%; } }
+  @media (min-width: 749px) {
+    .article {
+      padding: 6rem 2rem; } }
+  @media (min-width: 1024px) {
+    .article {
+      padding: 4rem 2rem;
+      width: 55%; } }
+  .article::before {
+    counter-increment: section;
+    font-weight: bold;
+    font-size: 22rem;
+    z-index: -1;
+    content: counter(section);
+    z-index: 0; }
+    @media (min-width: 320px) and (orientation: portrait) {
+      .article::before {
+        font-size: 27rem; } }
+    @media (min-width: 749px) {
+      .article::before {
+        font-size: 25rem; } }
+    @media (min-width: 749px) and (orientation: portrait) {
+      .article::before {
+        font-size: 32rem; } }
+
+.btn {
+  font-size: 2.7vw;
+  cursor: pointer;
+  padding: 0.5rem;
+  margin: 0.5rem;
+  background-color: transparent;
+  color: #fefefe;
+  border-top: 2px solid #ff3cce;
+  border-left: 2px solid #ff3cce;
+  border-bottom: 2px solid #85c1e9;
+  border-right: 2px solid #85c1e9;
+  transition: transform 0.4s; }
+  @media (min-width: 320px) and (orientation: portrait) {
+    .btn {
+      font-size: 4.5vw; } }
+  @media (min-width: 749px) {
+    .btn {
+      font-size: 1.5vw; } }
+  @media (min-width: 749px) and (orientation: portrait) {
+    .btn {
+      font-size: 2.5vw; } }
+  .btn:hover {
+    transform: translateY(-0.2rem);
+    border-bottom: 2px solid #ff3cce;
+    border-right: 2px solid #ff3cce;
+    border-top: 2px solid #85c1e9;
+    border-left: 2px solid #85c1e9;
+    text-shadow: -2px -2px 5px rgba(133, 193, 233, 0.9); }
 
 .header {
   background-image: linear-gradient(to bottom, rgba(31, 31, 31, 0.4) 0%, rgba(31, 31, 31, 0.4) 100%), url(../../../img/header-background.jpg);
@@ -523,6 +612,21 @@ body {
     background-color: #1f1f1f;
     outline: 2px solid #ff3cce;
     outline-offset: 2rem; }
+
+.works {
+  min-height: 100vh;
+  overflow: hidden;
+  padding: 3rem; }
+  @media (min-width: 749px) and (orientation: portrait) {
+    .works {
+      padding: 3rem; } }
+  @media (min-width: 1024px) {
+    .works {
+      padding: 3rem; } }
+  .works__container {
+    display: flex;
+    flex-direction: column;
+    counter-reset: section; }
 
 body {
   background-color: #1f1f1f;

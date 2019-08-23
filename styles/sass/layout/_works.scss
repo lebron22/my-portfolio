@@ -1,0 +1,16 @@
+.works {
+  min-height: 100vh;
+  overflow: hidden;
+  padding: 3rem;
+  @include mediaQueryOrientation($tablet, portrait) {
+    padding: 3rem;
+  }
+  @include mediaQuery($laptop-small) {
+    padding: 3rem;
+  }
+  &__container {
+    display: flex;
+    flex-direction: column;
+    counter-reset: section;
+  }
+}

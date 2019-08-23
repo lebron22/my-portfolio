@@ -1,0 +1,71 @@
+.article {
+  padding: 4.2rem 0;
+  width: 80%;
+
+  &__heading {
+    margin: 1rem 0;
+  }
+
+  &__buttons {
+    margin-top: 1rem;
+  }
+
+  &:nth-child(even) {
+    position: relative;
+    align-self: flex-end;
+    padding-left: 10%;
+    > .article__buttons {
+      text-align: right;
+    }
+
+    &::before {
+      position: absolute;
+      top: -5%;
+      right: 60%;
+      z-index: -1;
+      color: rgba($color-tertiary-light, 0.4);
+    }
+  }
+  &:nth-child(odd) {
+    position: relative;
+    align-self: flex-start;
+    padding-right: 10%;
+    &::before {
+      position: absolute;
+      top: -5%;
+      left: 60%;
+      z-index: -1;
+      color: rgba($color-secondary-light, 0.4);
+    }
+  }
+
+  @include mediaQuery($mobile-large) {
+    padding: 3rem 2rem;
+    width: 60%;
+  }
+  @include mediaQuery($tablet) {
+    padding: 6rem 2rem;
+  }
+  @include mediaQuery($laptop-small) {
+    padding: 4rem 2rem;
+    width: 55%;
+  }
+  &::before {
+    counter-increment: section;
+    font-weight: bold;
+    font-size: 22rem;
+    @include mediaQueryOrientation($mobile-small, portrait) {
+      font-size: 27rem;
+    }
+    @include mediaQuery($tablet) {
+      font-size: 25rem;
+    }
+    @include mediaQueryOrientation($tablet, portrait) {
+      font-size: 32rem;
+    }
+    z-index: -1;
+
+    content: counter(section);
+    z-index: 0;
+  }
+}
