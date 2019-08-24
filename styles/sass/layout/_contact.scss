@@ -1,0 +1,50 @@
+.contact {
+  min-height: 90vh;
+  padding: 2rem;
+  background-color: $color-primary;
+  flex-wrap: wrap;
+  @include flexbox(flex-start, center);
+
+  @include mediaQuery($tablet) {
+    padding: 3rem;
+  }
+  &__heading {
+    align-self: flex-start;
+  }
+  &__content {
+    padding-top: 2rem;
+    @include flexbox(space-between, flex-start);
+    flex-direction: column;
+    @include mediaQuery($laptop-small) {
+      flex-direction: row;
+      padding: 3rem 2rem 2rem 2rem;
+    }
+    @include mediaQueryOrientation($laptop-small, portrait) {
+      flex-direction: column;
+      justify-content: center;
+    }
+  }
+
+  &__text {
+    padding-top: 0.5rem;
+    padding-left: 1rem;
+    @include mediaQuery($laptop-small) {
+      padding-left: 0;
+    }
+  }
+
+  &__heading-secondary {
+    &:not(:nth-child(2)) {
+      margin-bottom: 2.5rem;
+    }
+    &:nth-child(2) {
+      margin-bottom: 0.5rem;
+    }
+  }
+
+  &__socials {
+    flex-direction: row;
+    margin-bottom: 1rem;
+    transform: translateX(-0.5rem);
+  }
+}

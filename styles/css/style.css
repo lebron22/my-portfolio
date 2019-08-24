@@ -290,6 +290,35 @@ body {
     border-left: 2px solid #85c1e9;
     text-shadow: -2px -2px 5px rgba(133, 193, 233, 0.9); }
 
+.form {
+  margin: 0 auto;
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap; }
+  @media (min-width: 1024px) {
+    .form {
+      width: 45%;
+      margin: 0 0 0 auto; } }
+  @media (min-width: 1024px) and (orientation: portrait) {
+    .form {
+      width: 100%;
+      margin: 0 auto; } }
+  .form__input {
+    width: calc((100% - 2rem) / 2);
+    padding: 0.5rem;
+    margin: 0.5rem;
+    background-color: transparent;
+    color: #fefefe;
+    border-top: 2px solid #ff3cce;
+    border-left: 2px solid #ff3cce;
+    border-bottom: 2px solid #85c1e9;
+    border-right: 2px solid #85c1e9; }
+    .form__input:focus {
+      outline: 1px solid #fefefe; }
+    .form__input--textarea {
+      resize: vertical;
+      width: 100%; }
+
 .header {
   background-image: linear-gradient(to bottom, rgba(31, 31, 31, 0.4) 0%, rgba(31, 31, 31, 0.4) 100%), url(../../../img/header-background.jpg);
   background-size: cover;
@@ -627,6 +656,48 @@ body {
     display: flex;
     flex-direction: column;
     counter-reset: section; }
+
+.contact {
+  min-height: 90vh;
+  padding: 2rem;
+  background-color: #1f1f1f;
+  flex-wrap: wrap;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center; }
+  @media (min-width: 749px) {
+    .contact {
+      padding: 3rem; } }
+  .contact__heading {
+    align-self: flex-start; }
+  .contact__content {
+    padding-top: 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-direction: column; }
+    @media (min-width: 1024px) {
+      .contact__content {
+        flex-direction: row;
+        padding: 3rem 2rem 2rem 2rem; } }
+    @media (min-width: 1024px) and (orientation: portrait) {
+      .contact__content {
+        flex-direction: column;
+        justify-content: center; } }
+  .contact__text {
+    padding-top: 0.5rem;
+    padding-left: 1rem; }
+    @media (min-width: 1024px) {
+      .contact__text {
+        padding-left: 0; } }
+  .contact__heading-secondary:not(:nth-child(2)) {
+    margin-bottom: 2.5rem; }
+  .contact__heading-secondary:nth-child(2) {
+    margin-bottom: 0.5rem; }
+  .contact__socials {
+    flex-direction: row;
+    margin-bottom: 1rem;
+    transform: translateX(-0.5rem); }
 
 body {
   background-color: #1f1f1f;
