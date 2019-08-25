@@ -699,6 +699,25 @@ body {
     margin-bottom: 1rem;
     transform: translateX(-0.5rem); }
 
+.footer {
+  position: relative;
+  background-color: #1f1f1f;
+  padding: 0 2rem 1rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center; }
+  @media (min-width: 749px) and (orientation: portrait) {
+    .footer {
+      padding: 0 3rem 3rem 3rem; } }
+  @media (min-width: 1024px) {
+    .footer {
+      padding: 0 3rem 3rem 3rem; } }
+  .footer__copyrights {
+    display: block;
+    text-align: right;
+    padding: 0.3rem;
+    font-size: 0.8rem; }
+
 body {
   background-color: #1f1f1f;
   overflow-x: hidden; }

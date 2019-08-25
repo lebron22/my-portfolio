@@ -1,0 +1,18 @@
+.footer {
+  position: relative;
+  background-color: $color-primary;
+  padding: 0 2rem 1rem 2rem;
+  @include mediaQueryOrientation($tablet, portrait) {
+    padding: 0 3rem 3rem 3rem;
+  }
+  @include mediaQuery($laptop-small) {
+    padding: 0 3rem 3rem 3rem;
+  }
+  @include flexbox(space-between, center);
+  &__copyrights {
+    display: block;
+    text-align: right;
+    padding: 0.3rem;
+    font-size: 0.8rem;
+  }
+}
