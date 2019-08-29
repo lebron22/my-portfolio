@@ -1,11 +1,11 @@
 body {
-  font-family: "Lato", sans-serif;
-  font-weight: 400;
+  font-family: "Barlow Condensed", sans-serif;
   /*font-size: 16px;*/
   color: $color-white-1;
 }
 
 .heading-primary {
+  font-family: sans-serif;
   text-transform: uppercase;
   backface-visibility: hidden;
   font-size: 8vw;
@@ -28,6 +28,7 @@ body {
 }
 
 .heading-secondary {
+  font-weight: 700;
   &--main {
     font-size: 3.3vw;
     @include mediaQueryOrientation($mobile-small, portrait) {
@@ -44,7 +45,7 @@ body {
     text-transform: none;
     font-size: 4.5vw;
     font-style: italic;
-    // text-shadow: -2px -2px 5px rgba($color-tertiary-light, 0.9);
+    text-shadow: -1px -1px 3px rgba($color-tertiary-light, 0.9);
     animation: moveInLeft 1s ease-out;
 
     @include mediaQuery($mobile-large) {
@@ -67,17 +68,17 @@ body {
     background-clip: text;
     -webkit-background-clip: text;
     color: transparent;
-    font-weight: 800;
   }
 }
 
 .paragraph {
+  font-weight: 400;
   font-size: 2.6vw;
   @include mediaQueryOrientation($mobile-small, portrait) {
-    font-size: 4.6vw;
+    font-size: 5.1vw;
   }
   @include mediaQuery($tablet) {
-    font-size: 2.2vw;
+    font-size: 2.4vw;
   }
   @include mediaQueryOrientation($tablet, portrait) {
     font-size: 2.8vw;
@@ -88,19 +89,19 @@ body {
   &--main {
     font-size: 2.5vw;
     @include mediaQueryOrientation($mobile-small, portrait) {
-      font-size: 4.5vw;
+      font-size: 5vw;
     }
     @include mediaQueryOrientation($mobile-medium, portrait) {
       font-size: 3.8vw;
     }
     @include mediaQuery($tablet) {
-      font-size: 2.2vw;
+      font-size: 2.5vw;
     }
     @include mediaQueryOrientation($tablet, portrait) {
-      font-size: 4vw;
+      font-size: 4.3vw;
     }
     @include mediaQuery($laptop-medium) {
-      font-size: 1.8vw;
+      font-size: 2vw;
     }
   }
   &--sub {

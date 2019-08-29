@@ -12,6 +12,7 @@
     align-self: flex-start;
   }
   &__content {
+    width: 100%;
     padding-top: 2rem;
     @include flexbox(space-between, flex-start);
     flex-direction: column;
