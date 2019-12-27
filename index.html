@@ -26,12 +26,15 @@
       href="https://fonts.googleapis.com/css?family=Barlow+Condensed:400,700&display=swap&subset=latin-ext"
       rel="stylesheet"
     />
+    <!-- AOS -->
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
     <!-- MY STYLES -->
     <link rel="stylesheet" href="styles/css/style.css" />
   </head>
   <body>
     <div class="loading">
       <img src="img/logo500.png" alt="Logo" class="loading__logo active" />
+      <p class="paragraph--sub">Loading...</p>
     </div>
     <div class="navigation">
       <input type="checkbox" class="navigation__checkbox" id="navi-toggle" />
@@ -142,7 +145,7 @@
       <section class="works">
         <h1 class="heading-primary" id="works">Works</h1>
         <div class="works__container">
-          <div class="article">
+          <div class="article" data-aos="fade-right">
             <h2 class="article__heading heading-secondary--main">
               Lorem ipsum
             </h2>
@@ -157,7 +160,7 @@
               <button class="btn">Code</button>
             </div>
           </div>
-          <div class="article">
+          <div class="article" data-aos="fade-left">
             <h2 class="article__heading heading-secondary--main">
               Lorem ipsum
             </h2>
@@ -171,7 +174,7 @@
               <button class="btn">Code</button>
             </div>
           </div>
-          <div class="article">
+          <div class="article" data-aos="fade-right">
             <h2 class="article__heading heading-secondary--main">
               Lorem ipsum
             </h2>
@@ -185,7 +188,7 @@
               <button class="btn">Code</button>
             </div>
           </div>
-          <div class="article">
+          <div class="article" data-aos="fade-left">
             <h2 class="article__heading heading-secondary--main">
               Lorem ipsum
             </h2>
@@ -239,7 +242,7 @@
               ... or send me an email.
             </h2>
           </div>
-          <form class="form">
+          <form class="form" data-aos="zoom-in-left">
             <input
               type="text"
               placeholder="Name"
@@ -281,8 +284,15 @@
         Made with <i class="fas fa-heart"></i> by Kamil Bronisz © 2019
       </p>
     </footer>
-
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+    <!-- AOS -->
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="/__/firebase/7.2.1/firebase-app.js"></script>
+    <!-- Firebase analytics -->
+    <script src="/__/firebase/7.2.1/firebase-analytics.js"></script>
+    <!-- Initialize Firebase -->
+    <script src="/__/firebase/init.js"></script>
+    <!-- website script -->
     <script src="./scripts/main.js"></script>
   </body>
 </html>

@@ -125,6 +125,9 @@ body {
   @media (min-width: 749px) and (orientation: portrait) {
     .paragraph {
       font-size: 2.8vw; } }
+  @media (min-width: 1024px) {
+    .paragraph {
+      font-size: 2vw; } }
   @media (min-width: 1366px) {
     .paragraph {
       font-size: 1.8vw; } }
@@ -336,6 +339,7 @@ body {
   background-position: top;
   background-attachment: fixed;
   height: 100vh;
+  height: calc(var(--vh, 1vh) * 100);
   padding: 2rem;
   display: flex;
   justify-content: space-between;
@@ -356,9 +360,9 @@ body {
       background-position: bottom; } }
   .header__scroll {
     position: absolute;
-    bottom: 0.5rem;
     left: 50%;
     transform: translateX(-50%);
+    bottom: 0.3rem;
     font-size: 0.7rem;
     padding-bottom: 0.3rem;
     animation: hideAndAppear 2s infinite; }
@@ -429,6 +433,7 @@ body {
 
 .navigation__nav {
   height: 100vh;
+  height: calc(var(--vh, 1vh) * 100);
   position: fixed;
   top: 0;
   right: 0;
@@ -611,7 +616,8 @@ body {
 .navigation__socials {
   position: absolute;
   left: 2rem;
-  bottom: 2rem; }
+  top: 2rem;
+  flex-direction: column; }
 
 .about {
   position: relative;
@@ -750,6 +756,9 @@ body {
         width: 25vw; } }
   .loading.hidden {
     transform: translateY(-100%); }
+
+html {
+  scroll-behavior: smooth; }
 
 body {
   background-color: #1f1f1f;

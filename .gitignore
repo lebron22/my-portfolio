@@ -1,1 +1,7 @@
-node_modules
+/node_modules
+/public
+/.firebase
+.firebaserc
+.firebase.rules.json
+firebase.json
+database.rules.json

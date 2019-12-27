@@ -1,12 +1,21 @@
+//header height on mobile screens
+const setHeaderHeight = () => {
+  let vh = window.innerHeight * 0.01;
+  const header = document.querySelector(".header");
+  header.style.setProperty("--vh", `${vh}px`);
+};
+
 //hide loading page
 const loading = document.querySelector(".loading");
 window.addEventListener("DOMContentLoaded", () => {
-  setTimeout(() => {
-    loading.classList.add("hidden");
-  }, 300);
+  setHeaderHeight();
+  loading.classList.add("hidden");
 });
 
-//hide navigation after click in navigation link
+// Also we listen to the resize event
+window.addEventListener("resize", setHeaderHeight);
+
+//hide navigation after click in navigation links
 
 const navLinks = [...document.querySelectorAll(".navigation__link")];
 const navBtn = document.getElementById("navi-toggle");
@@ -19,15 +28,9 @@ navLinks.forEach(link => {
   link.addEventListener("click", () => handleMenuToggle());
 });
 
-//smooth scroll with jQuery
-$('a[href*="#"]').on("click", function(e) {
-  e.preventDefault();
+// Animation on scroll
 
-  $("html, body").animate(
-    {
-      scrollTop: $($(this).attr("href")).offset().top
-    },
-    500,
-    "linear"
-  );
+AOS.init({
+  //animation settings
+  duration: 600
 });

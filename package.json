@@ -4,10 +4,12 @@
   "description": "Kamil Bronisz portfolio site",
   "main": "index.js",
   "scripts": {
-    "compile:sass": "node-sass styles/sass/main.scss styles/css/style.css -w"
+    "compile:sass": "node-sass styles/sass/main.scss styles/css/style.css -w",
+    "deploy": "gh-pages -d "
   },
   "author": "Kamil Bronisz",
   "license": "ISC",
+  "homepage": "https://lebron22.github.io/my-portfolio/",
   "dependencies": {},
   "devDependencies": {
     "node-sass": "^4.12.0"
