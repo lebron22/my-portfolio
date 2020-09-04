@@ -12,6 +12,6 @@
   "homepage": "https://lebron22.github.io/my-portfolio/",
   "dependencies": {},
   "devDependencies": {
-    "node-sass": "^4.12.0"
+    "node-sass": "^4.13.1"
   }
 }
